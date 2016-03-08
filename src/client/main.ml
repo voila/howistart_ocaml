@@ -20,10 +20,7 @@ let rec request () =
   body |> Cohttp_lwt_body.to_string >|= (fun as_str ->
   Yojson.Basic.from_string as_str
   |> Yojson.Basic.pretty_to_string
-  |> Lwt_io.printl )) >>= fun _ ->
-  (* wait for 3 seconds and request again *)
-  Lwt.return (Unix.sleep 3) >>= fun _ -> 
-  request ()
+  |> Lwt_io.printl ))
 
 let () =
   (** Lwt is a cooperative threading library in OCaml. Cooperative
