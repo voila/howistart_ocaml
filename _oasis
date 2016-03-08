@@ -1,0 +1,29 @@
+OASISFormat:  0.4
+OCamlVersion: >= 4.02.3
+Name:         json_ticker
+Version:      0.1
+Maintainers:  th3rac25
+Synopsis:     "How I Start OCaml"
+Authors:      th3rac25@gmail.com
+License:      GPL-3
+Plugins:      META (0.4), DevFiles (0.4)
+AlphaFeatures: ocamlbuild_more_args
+
+Description: 
+  Simple client and server programs for "How I Start OCaml" 
+
+# This is a comment and this below creates an binary program
+Executable json_ticker_client
+  Path: src/client
+  BuildTools:ocamlbuild
+  MainIs: main.ml
+  CompiledObject: native
+  BuildDepends: lwt, cohttp, cohttp.lwt, yojson, ppx_deriving_yojson
+
+# This is a comment and this below creates an binary program
+Executable json_ticker_server
+  Path: src/server
+  BuildTools:ocamlbuild
+  MainIs: main.ml
+  CompiledObject: native
+  BuildDepends: lwt, cohttp, cohttp.lwt, yojson, ppx_deriving_yojson
