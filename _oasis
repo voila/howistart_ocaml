@@ -12,18 +12,20 @@ AlphaFeatures: ocamlbuild_more_args
 Description: 
   Simple client and server programs for "How I Start OCaml" 
 
-# This is a comment and this below creates an binary program
-Executable json_ticker_client
-  Path: src/client
-  BuildTools:ocamlbuild
-  MainIs: main.ml
-  CompiledObject: native
-  BuildDepends: lwt, cohttp, cohttp.lwt, yojson, ppx_deriving_yojson
 
 # This is a comment and this below creates an binary program
 Executable json_ticker_server
-  Path: src/server
+  Path: src
   BuildTools:ocamlbuild
-  MainIs: main.ml
+  MainIs: ticker_server.ml
+  CompiledObject: native
+  BuildDepends: lwt, cohttp, cohttp.lwt, yojson, ppx_deriving_yojson
+
+
+# This is a comment and this below creates an binary program
+Executable json_ticker_client
+  Path: src
+  BuildTools:ocamlbuild
+  MainIs: ticker_client.ml
   CompiledObject: native
   BuildDepends: lwt, cohttp, cohttp.lwt, yojson, ppx_deriving_yojson
