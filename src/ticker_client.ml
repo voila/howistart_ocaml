@@ -2,7 +2,7 @@ open Lwt.Infix
 open Cohttp_lwt_unix
 
 
-let rec request () =
+let request () =
   (* Some bogus ask amd bid price *)
   Client.get (Uri.of_string "http://127.0.0.1:8000/ticker")
   (** Bind, or as some affectionally call shove: 'a Lwt.t -> (a' -> b'
