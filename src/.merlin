@@ -1,3 +1,6 @@
 PKG lwt.infix
+PKG lwt.ppx
 PKG cohttp.lwt
 PKG yojson
+PKG ppx_deriving_yojson
+PKG websocket
